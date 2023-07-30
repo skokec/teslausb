@@ -99,7 +99,7 @@ function add_drive () {
   log_progress "Creating filesystem with label '$label'"
   if [ "$useexfat" = true  ]
   then
-    mkfs.exfat "$loopdev" -L "$label"
+    mkfs.exfat "$loopdev" -n "$label"
   else
     mkfs.vfat "$loopdev" -F 32 -n "$label"
   fi
